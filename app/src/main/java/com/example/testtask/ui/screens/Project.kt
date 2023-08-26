@@ -21,11 +21,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.testtask.R
+import com.example.testtask.ui.presentation.MainViewModel
 import com.example.testtask.ui.theme.TestTaskTheme
 
 @Composable
 fun Project(
-
+viewModel: MainViewModel
 ) {
     TestTaskTheme() {
 
@@ -52,7 +53,7 @@ fun Project(
             Box(
                 modifier = Modifier.fillMaxWidth().background(Color.Transparent),
             ) {
-                TabLayout()
+                TabLayout(viewModel)
             }
 
         }

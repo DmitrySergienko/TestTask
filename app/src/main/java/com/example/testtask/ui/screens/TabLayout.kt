@@ -1,6 +1,5 @@
 package com.example.testtask.ui.screens
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
@@ -19,24 +18,29 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.testtask.R
+import com.example.testtask.ui.presentation.MainViewModel
+import com.example.testtask.ui.screens.cameras.DoorRecyclerScreen
+import com.example.testtask.ui.screens.cameras.RecyclerScreen
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.pagerTabIndicatorOffset
 import com.google.accompanist.pager.rememberPagerState
 import kotlinx.coroutines.launch
-import ru.ds.rate.ui.screens.common.TabList
+
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun TabLayout(
-
+    viewModel: MainViewModel
 ) {
+
+
     val tabList = listOf(
         stringResource(id = R.string.cameras),
         stringResource(id = R.string.doors),
 
     )
-    //для пейджера
+
     val pageState = rememberPagerState()
     val tabIndex = pageState.currentPage
     val coroutineScope = rememberCoroutineScope()
@@ -47,7 +51,7 @@ fun TabLayout(
             .height(480.dp)
             .padding(start = 2.dp, end = 2.dp)
             .clip(RoundedCornerShape(1.dp))
-            .background(Color.Transparent)
+
     ) {
         TabRow(
             selectedTabIndex = tabIndex,
@@ -57,12 +61,12 @@ fun TabLayout(
                         .pagerTabIndicatorOffset(pageState, pos)
                 )
             },
-            modifier = Modifier.alpha(0.94f).background(Color.Transparent),
+            modifier = Modifier.alpha(0.94f),
             backgroundColor = Color.Transparent,
             contentColor = Color.Black,
 
         ) {
-            //идет перебор списка, для каждого элемнета выводит "text" и Tab
+
             tabList.forEachIndexed { index, text ->
                 Tab(
                     selected = false,
@@ -73,7 +77,7 @@ fun TabLayout(
                     },
                     text = {
                         Text(
-                            text = "Двери",
+                            text = text,
                             style = TextStyle(
                                 fontSize = 17.sp,
                                 lineHeight = 16.sp,
@@ -94,8 +98,8 @@ fun TabLayout(
                 .weight(1.0f)
         ) { tabIndex ->
             when (tabIndex) {
-                0 -> TabList()
-                1 -> TabList()
+                0 -> RecyclerScreen(viewModel = viewModel)
+                1 -> DoorRecyclerScreen(viewModel = viewModel)
             }
         }
     }
