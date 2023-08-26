@@ -3,6 +3,7 @@ package com.example.testtask.ui.screens.cameras
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
@@ -28,6 +29,7 @@ fun RecyclerScreen(viewModel: MainViewModel) {
         contentPadding = PaddingValues(bottom = 20.dp),
         modifier = Modifier
             .fillMaxWidth()
+            .padding(start = 20.dp, end = 20.dp, top = 8.dp, bottom = 8.dp)
             .background(color = Color(0xFFF6F6F6))
     ) {
 

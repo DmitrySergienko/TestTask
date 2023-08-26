@@ -33,8 +33,6 @@ import kotlinx.coroutines.launch
 fun TabLayout(
     viewModel: MainViewModel
 ) {
-
-
     val tabList = listOf(
         stringResource(id = R.string.cameras),
         stringResource(id = R.string.doors),
@@ -48,7 +46,6 @@ fun TabLayout(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .height(480.dp)
             .padding(start = 2.dp, end = 2.dp)
             .clip(RoundedCornerShape(1.dp))
 

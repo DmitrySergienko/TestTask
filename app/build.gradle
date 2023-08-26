@@ -8,12 +8,12 @@ plugins {
 
 android {
     namespace 'com.example.testtask'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.testtask"
         minSdk 26
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -51,8 +51,12 @@ android {
 
 dependencies {
 
+    //Swipe
+    implementation "me.saket.swipe:swipe:1.0.0"
+
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout-compose-android:1.1.0-alpha12'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
     //hilt

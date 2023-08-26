@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -25,7 +27,11 @@ fun DoorItem(door: Door) {
 
     Log.d("VVV", "DoorItem() called with: door = $door")
 
-    Card(modifier = Modifier.fillMaxWidth()) {
+    Card(modifier = Modifier
+        .fillMaxWidth()
+        .padding(bottom = 4.dp, top = 4.dp),
+        shape = RoundedCornerShape(16.dp)
+    ) {
         Column {
             door.snapshot?.let {
                 GlideImage(
