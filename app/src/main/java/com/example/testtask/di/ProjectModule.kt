@@ -5,8 +5,8 @@ import com.example.testtask.data.ProjectApi
 import com.example.testtask.data.ProjectApiImpl
 import com.example.testtask.data.ProjectRepository
 import com.example.testtask.data.ProjectRepositoryImpl
-import com.example.testtask.domain.GetCamerasUseCase
-import com.example.testtask.domain.GetDoorsUseCase
+import com.example.testtask.domain.server.GetCamerasUseCase
+import com.example.testtask.domain.server.GetDoorsUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

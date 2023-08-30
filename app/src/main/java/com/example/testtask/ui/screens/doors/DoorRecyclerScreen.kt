@@ -34,8 +34,7 @@ fun DoorRecyclerScreen(viewModel: MainViewModel) {
     ) {
 
         items(doors) { door ->
-            Log.d("VVV", "DoorRecyclerScreen() called with: door = $door")
-            DoorItem(door)
+            DoorItem(door,viewModel)
         }
     }
 }

@@ -12,6 +12,7 @@ import com.example.testtask.ui.presentation.MainViewModel
 import com.example.testtask.ui.screens.Project
 import com.example.testtask.ui.theme.TestTaskTheme
 import dagger.hilt.android.AndroidEntryPoint
+import io.realm.Realm
 
 
 @AndroidEntryPoint
@@ -22,7 +23,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        Realm.init(this)
               setContent {
             TestTaskTheme {
                 // A surface container using the 'background' color from the theme

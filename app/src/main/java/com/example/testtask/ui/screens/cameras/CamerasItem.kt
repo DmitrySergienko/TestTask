@@ -48,7 +48,7 @@ fun CamerasItem(cameras: Camera) {
         },
         background = Color.Transparent
     )
-    val clean = SwipeAction(
+    val update = SwipeAction(
         onSwipe = { Toast.makeText(context, "!!!", Toast.LENGTH_SHORT).show()},
         icon = {
             Icon(
@@ -66,7 +66,7 @@ fun CamerasItem(cameras: Camera) {
         modifier = Modifier.background(Color.Transparent),
         swipeThreshold = 50.dp,
         startActions = listOf(archive),
-        endActions = listOf(clean),
+        endActions = listOf(update),
         backgroundUntilSwipeThreshold = Color.Transparent
     ) {
 
